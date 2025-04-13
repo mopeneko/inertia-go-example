@@ -12,12 +12,12 @@ import (
 var inertiaManager *inertia.Inertia
 
 func main() {
-	manifest, err := LoadManifest()
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	asset := func(path string) string {
+		manifest, err := LoadManifest()
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		return "/" + manifest[path].File
 	}
 
